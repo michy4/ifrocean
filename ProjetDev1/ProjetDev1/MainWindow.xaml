@@ -1,0 +1,103 @@
+﻿<Window x:Class="ProjetDev1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjetDev1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <DockPanel>
+        
+        <TextBox AcceptsReturn="True" />
+        <StackPanel >
+
+            <TabControl Margin="0,0,0,0" Height="394">
+
+                <TabItem Header="Ajouter comptage">
+
+                    <Grid Name ="grigrid" Height="300" Margin="0,0,0.300,0" VerticalAlignment="Top">
+                        <ScrollViewer Margin="0,10,0,-10">
+                            <StackPanel>
+
+
+                                <Label Content="Plage"></Label>
+
+                                <TextBox Name="PlageTextBox" Height="20"/>
+                                <Label Content="Etude"></Label>
+
+                                <TextBox Name="EtudeTextBox" Height="20"/>
+                                <Label Content="Nombre de Personnes"></Label>
+
+                                <TextBox Name="NbPersTextBox" Height="20" Margin="0,0,0.300,0"/>
+                                <Label Content="Coord1Larg"></Label>
+
+                                <TextBox Name="Coord1LargTextBox" Height="20" Margin="0,0,0.300,0"/>
+                                <Label Content="Coord1Long"></Label>
+
+                                <TextBox Name="Coord1LongTextBox" Height="20" Margin="0,0,0.300,0"/>
+                                <Label Content="Coord2Larg"></Label>
+
+                                <TextBox Name="Coord2LargTextBox" Height="20" Margin="0,0,0.300,0"/>
+                                <Label Content="Coord2Long"></Label>
+
+                                <TextBox Name="Coord2LongTextBox" Height="20" Margin="0,0,0.300,0"/>
+                                <Label Content="Coord2Larg"></Label>
+
+                                <TextBox Name="Coord3LargTextBox" Height="20" Margin="0,0,0.300,0"/>
+                                <Label Content="Coord2Long"></Label>
+
+                                <TextBox Name="Coord3LongTextBox" Height="20" Margin="0,0,0.300,0"/>
+                                <Label Content="Coord2Larg"></Label>
+
+                                <TextBox Name="Coord4LargTextBox" Height="20" Margin="0,0,0.300,0"/>
+                                <Label Content="Coord2Long"></Label>
+
+                                <TextBox Name="Coord4LongTextBox" Height="20" Margin="0,0,0.300,0"/>
+                                <Button x:Name="AjouterComptage" Content="{Binding ComptageProperty}" MouseDoubleClick="AjouterComptage_MouseDoubleClick" BorderBrush="#FF545454" BorderThickness="5,5,5,1" Height="35" Margin="0,5,206.333,0" HorizontalAlignment="Right" Width="427" RenderTransformOrigin="0.5,2.31" >
+                                    <Button.Background>
+                                        <RadialGradientBrush>
+                                            <GradientStop Color="#FFF26A66" Offset="0.279"/>
+                                            <GradientStop Color="#FFFFE10A" Offset="0.779"/>
+                                            <GradientStop Color="#FFD3B220" Offset="0.986"/>
+                                        </RadialGradientBrush>
+                                    </Button.Background>
+                                </Button>
+                            </StackPanel>
+                        </ScrollViewer>
+                    </Grid>
+
+                </TabItem>
+
+                <TabItem Header="Liste des Comptages">
+                    <StackPanel>
+                        <Grid Margin="10">
+                            <ScrollViewer Margin="0,10,0,-10">
+                                <DataGrid Name="listeComptages" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="Left" Margin="200,0"  Grid.ColumnSpan="2" BorderBrush="Black" Background="#FFA4A4A4" SelectionChanged="listeComptages_SelectionChanged">
+                                
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="Id" Binding="{Binding idComptageProperty, Mode=OneWay}" />
+                                        <DataGridTextColumn Header="Étude" Binding="{Binding idEtudeProperty.Nom, Mode=OneWay}" />
+                                        <DataGridTextColumn Header="Plage" Binding="{Binding idPlageProperty.Nom, Mode=OneWay}" />
+                                        <DataGridTextColumn Header="Date" Binding="{Binding dateProperty, Mode=OneWay}" />
+                                        <DataGridTextColumn Header="Nombre de Participants" Binding="{Binding NbParticipantsProperty, Mode=TwoWay}" />
+                                        <DataGridTextColumn Header="Coord 1.1" Binding="{Binding Coord1LongProperty, Mode=OneWay}" />
+                                        <DataGridTextColumn Header="Coord 1.2" Binding="{Binding Coord1LargProperty, Mode=OneWay}" />
+                                        <DataGridTextColumn Header="Coord 2.1" Binding="{Binding Coord2LongProperty, Mode=OneWay}" />
+                                        <DataGridTextColumn Header="Coord 2.2" Binding="{Binding Coord2LargProperty, Mode=OneWay}" />
+                                        <DataGridTextColumn Header="Coord 3.1" Binding="{Binding Coord3LongProperty, Mode=OneWay}" />
+                                        <DataGridTextColumn Header="Coord 3.2" Binding="{Binding Coord3LargProperty, Mode=OneWay}" />
+                                        <DataGridTextColumn Header="Coord 4.1" Binding="{Binding Coord4LongProperty, Mode=OneWay}" />
+                                        <DataGridTextColumn Header="Coord 4.2" Binding="{Binding Coord4LargProperty, Mode=OneWay}" />
+                                    </DataGrid.Columns>
+                                
+                                </DataGrid>
+                            </ScrollViewer>
+                        </Grid>
+                        
+                    </StackPanel>
+                </TabItem>
+                
+            </TabControl>
+        </StackPanel>
+    </DockPanel>
+</Window>
